@@ -4,7 +4,7 @@ const Panel: React.FC = () => {
     return (
         <Container>
             <Title>
-                Acompanhe as condições do mar em tempo real, receba notificações e compartilhe reports
+                Condições do mar em tempo real, notificações e reports
             </Title>
         </Container>
     )
@@ -17,11 +17,11 @@ const Container = styled.div`
     background-color: #1d1c1c;
     margin-top: 60px;
 `;
-const Title = styled.h1`
-    font-size: 30px;
+export const Title = styled.h1`
+    font-size: 34px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
     padding-top: 100px;
 `;

@@ -6,6 +6,7 @@ const TopBar: React.FC = () => {
         <Container>
             <Logo/>
             <Links>
+                <p>Login</p>
                 <p>Report</p>
                 <p>Timeline</p>
                 <p>Sobre</p>
@@ -28,6 +29,7 @@ const Container = styled.div`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 `;
 const Links = styled.div`
     display: flex;
@@ -45,6 +47,6 @@ const Links = styled.div`
     }
 
     && p:hover {
-        color: #b6b6f3;
+        color: grey;
     }
 `;

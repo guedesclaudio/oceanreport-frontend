@@ -1,19 +1,20 @@
-import styled from "styled-components";
 import TopBar from "../components/TopBar";
 import Panel from "../components/Panel";
+import PanelBoxes from "../components/PanelBoxes";
+import HomeMessage from "../components/HomeMessage";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
     return (
         <>
             <TopBar/>
-            <Container>
+            <>
                 <Panel/>
-            </Container>
+                <PanelBoxes/>
+                <HomeMessage/>
+                <Footer/>
+            </>
         </>
     )
 }
 export default Home;
-
-const Container = styled.div`
-    
-`;
