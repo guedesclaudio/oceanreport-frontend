@@ -33,6 +33,10 @@ const Text = styled.h1`
     color: white;
     display: flex;
     font-family: 'Inter', sans-serif;
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 `;
 const Icons = styled.div`
     color: white;
@@ -41,7 +45,7 @@ const Icons = styled.div`
     cursor: pointer;
 
     &&:hover {
-        transform: scale(1.1);
+        color: grey;
     }
 `
 const Content = styled.div`
@@ -49,4 +53,8 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 500px) {
+        width: 90%;
+    }
 `

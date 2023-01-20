@@ -31,6 +31,11 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     
+    @media (max-width: 1200px) {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
 `;
 const Content = styled.div`
     width: 380px;
@@ -50,6 +55,13 @@ const Content = styled.div`
     &&:hover {
         transform: scale(1.1);
     }
+
+    @media (max-width: 1200px) {
+        margin-top: 20px;
+    }
+    @media (max-width: 400px) {
+        width: 90%;
+    }
 `
 const BoxFooter = styled.div`
     width: 100%;
@@ -63,6 +75,10 @@ const BoxFooter = styled.div`
         font-size: 18px;
         color: #727171;
         padding: 10px;
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
     }
 
     && p {
@@ -70,5 +86,9 @@ const BoxFooter = styled.div`
         font-size: 14px;
         color: #a0a0a0;
         padding-left: 10px;
+
+        @media (max-width: 500px) {
+            font-size: 11px;
+        }
     }
 `;
