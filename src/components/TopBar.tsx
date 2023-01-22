@@ -1,20 +1,20 @@
-import styled from "styled-components";
-import Logo from "./Logo";
+import styled from 'styled-components';
+import Logo from './Logo';
 
 const TopBar: React.FC = () => {
-    return (
-        <Container>
-            <Logo/>
-            <Links>
-                <p>Login</p>
-                <p>Report</p>
-                <p>Timeline</p>
-                <p>Sobre</p>
-                <p>Previsão</p>
-            </Links>
-        </Container>
-    )
-}
+  return (
+    <Container>
+      <Logo/>
+      <Links>
+        <p>Login</p>
+        <p>Report</p>
+        <p>Timeline</p>
+        <p>Sobre</p>
+        <p>Previsão</p>
+      </Links>
+    </Container>
+  );
+};
 export default TopBar;
 
 const Container = styled.div`

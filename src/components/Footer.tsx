@@ -1,21 +1,21 @@
-import styled from "styled-components";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import styled from 'styled-components';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 const Footer: React.FC = () => {
-    return (
-        <Container>
-            <Content>
-                <Text>
+  return (
+    <Container>
+      <Content>
+        <Text>
                     Desenvolvido por Claudio Guedes
-                </Text>
-                <Icons>
-                    <AiFillGithub />
-                    <AiFillLinkedin />
-                </Icons>
-            </Content>
-        </Container>
-    )
-}
+        </Text>
+        <Icons>
+          <AiFillGithub />
+          <AiFillLinkedin />
+        </Icons>
+      </Content>
+    </Container>
+  );
+};
 export default Footer;
 
 const Container = styled.div`
@@ -47,7 +47,7 @@ const Icons = styled.div`
     &&:hover {
         color: grey;
     }
-`
+`;
 const Content = styled.div`
     width: 320px;
     display: flex;
@@ -57,4 +57,4 @@ const Content = styled.div`
     @media (max-width: 500px) {
         width: 90%;
     }
-`
+`;

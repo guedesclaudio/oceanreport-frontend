@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Logo: React.FC = () => {
-    return (
-        <Container>
-            <h1>
+  return (
+    <Container>
+      <h1>
                 Ocean Report
-            </h1>
-        </Container>
-    )
-}
+      </h1>
+    </Container>
+  );
+};
 export default Logo;
 
 const Container = styled.div`
