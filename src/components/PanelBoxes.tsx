@@ -1,26 +1,26 @@
-import styled from "styled-components";
-import { BoxInformation } from "../types/types";
-import { boxData } from "../helpers/boxData";
+import styled from 'styled-components';
+import { BoxInformation } from '../types/types';
+import { boxData } from '../helpers/boxData';
 
-const Box: React.FC<BoxInformation> = ({image, title, text}) => {
-    return (
-        <Content>
-            <img src={image}/>
-            <BoxFooter>
-                <h1>{title}</h1>
-                <p>{text}</p>
-            </BoxFooter>
-        </Content>
-    )
-}
+const Box: React.FC<BoxInformation> = ({ image, title, text }) => {
+  return (
+    <Content>
+      <img src={image}/>
+      <BoxFooter>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </BoxFooter>
+    </Content>
+  );
+};
 
 const PanelBoxes: React.FC = () => {
-    return (
-        <Container>
-            {boxData?.map((value, index) => <Box key = {index} image = {value.image} title = {value.title} text = {value.text}/>)}
-        </Container>
-    )
-}
+  return (
+    <Container>
+      {boxData?.map((value, index) => <Box key = {index} image = {value.image} title = {value.title} text = {value.text}/>)}
+    </Container>
+  );
+};
 export default PanelBoxes;
 
 const Container = styled.div`
@@ -62,7 +62,7 @@ const Content = styled.div`
     @media (max-width: 400px) {
         width: 90%;
     }
-`
+`;
 const BoxFooter = styled.div`
     width: 100%;
     height: 60px;

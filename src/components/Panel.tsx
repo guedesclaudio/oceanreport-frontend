@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Panel: React.FC = () => {
-    return (
-        <Container>
-            <Title>
+  return (
+    <Container>
+      <Title>
                 Condições do mar em tempo real, notificações e reports
-            </Title>
-        </Container>
-    )
-}
+      </Title>
+    </Container>
+  );
+};
 export default Panel;
 
 const Container = styled.div`
