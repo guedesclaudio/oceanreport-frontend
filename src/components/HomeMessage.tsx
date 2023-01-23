@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 import { Title } from './Panel';
 import { IoChevronForwardCircle } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const HomeMessage: React.FC = () => {
   return (
     <Container>
-      <Title style={{ color: 'grey', paddingTop: 0 }}>
-                Cadastre-se e receba os reports por email diariamente
-      </Title>
-      <Icon>
-        <IoChevronForwardCircle/>
-      </Icon>
+      <Title style={{ color: 'grey', paddingTop: 0 }}>Cadastre-se e receba os reports por email diariamente</Title>
+      <Link to = {'/signup'}>
+        <Icon>
+          <IoChevronForwardCircle/>
+        </Icon>
+      </Link>
     </Container>
   );
 };

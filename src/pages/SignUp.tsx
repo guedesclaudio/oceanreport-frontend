@@ -5,18 +5,18 @@ import BodyColor from '../styles/BodyColor';
 const SignUp: React.FC = () => {
   return (
     <>
-    <BodyColor/>
-    <Title>Ocean Report</Title>
-    <SubTitle>cadastre-se e tenha acesso a todas as funções</SubTitle>
-    <Container>
+      <BodyColor/>
+      <Title>Ocean Report</Title>
+      <SubTitle>cadastre-se e tenha acesso a todas as funções</SubTitle>
+      <Container>
         <form>
-            <Inputs>
-                {userInputs.map((value, index) => <Input key = {index} name = {value.name} type = {value.type} placeholder = {value.placeholder}/>)}
-                <Button>enviar</Button>
-            </Inputs>
+          <Inputs>
+            {userInputs.map((value, index) => <Input key = {index} name = {value.name} type = {value.type} placeholder = {value.placeholder}/>)}
+            <Button>enviar</Button>
+          </Inputs>
         </form>
         <Text>Já tem conta? Faça login!</Text>
-    </Container>
+      </Container>
     </>
   );
 };
@@ -94,7 +94,7 @@ const SubTitle = styled(Title)`
     font-size: 20px;
     color: #b1b1b1;
     margin-top: 20px;
-`
+`;
 const Text = styled.p`
     font-size: 12px;
     color: white;
@@ -102,4 +102,4 @@ const Text = styled.p`
     font-family: 'Inter', sans-serif;
     margin-top: 16px;
     cursor: pointer;
-`
+`;
