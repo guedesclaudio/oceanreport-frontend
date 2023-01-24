@@ -20,3 +20,5 @@ export const userInputs = [
     placeholder: 'confirme sua senha',
   }
 ];
+
+export const loginInputs = [userInputs[1], userInputs[2]];

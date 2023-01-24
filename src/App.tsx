@@ -1,8 +1,8 @@
 import './App.css';
-import GlobalStyle from './styles/globalStyle';
-import Home from './pages/Home';
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
+import GlobalStyle from './Styles/globalStyle';
+import Home from './Pages/Home';
+import SignUp from './Pages/SignUp';
+import SignIn from './Pages/SignIn';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
