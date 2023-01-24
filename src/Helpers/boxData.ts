@@ -1,4 +1,4 @@
-import { BoxInformation } from '../types/types';
+import { BoxInformation } from '../Types/types';
 
 export const boxData: BoxInformation[] = [
   {

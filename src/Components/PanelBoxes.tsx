@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { BoxInformation } from '../types/types';
-import { boxData } from '../helpers/boxData';
+import { BoxInformation } from '../Types/types';
+import { boxData } from '../Helpers/boxData';
 
 const Box: React.FC<BoxInformation> = ({ image, title, text }) => {
   return (

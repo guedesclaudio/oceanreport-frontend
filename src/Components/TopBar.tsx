@@ -1,16 +1,27 @@
 import styled from 'styled-components';
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 const TopBar: React.FC = () => {
   return (
     <Container>
       <Logo/>
       <Links>
-        <p>Login</p>
-        <p>Report</p>
-        <p>Timeline</p>
-        <p>Sobre</p>
-        <p>Previsão</p>
+        <Link to = {'/signin'}>
+          <p>Login</p>
+        </Link>
+        <Link to = {'/report'}>
+          <p>Report</p>
+        </Link>
+        <Link to = {'/timeline'}>
+          <p>Timeline</p>
+        </Link>
+        <Link to = {'/about'}>
+          <p>Sobre</p>
+        </Link>
+        <a href = "https://www.windy.com/-22.973/-43.149/waves?swell1,-22.980,-43.147,15" target = "_blank" rel="noreferrer">
+          <p>Previsão</p>
+        </a>
       </Links>
     </Container>
   );
