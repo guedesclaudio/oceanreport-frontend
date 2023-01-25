@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { useState } from 'react';
-import { contextObject } from '../Helpers/Contexts/Context';
+import { contextObject, Context } from '../Helpers/Contexts/Context';
 
 const UserContext = createContext<any>(contextObject);
 

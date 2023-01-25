@@ -20,3 +20,8 @@ export type LoginUser = {
 export type Error = {
     [key: string]: string
 };
+
+export type LinkType = {
+    name: string,
+    url: string
+};

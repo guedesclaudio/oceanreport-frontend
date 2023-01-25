@@ -1,29 +1,46 @@
 import styled from 'styled-components';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoCloseCircleOutline } from 'react-icons/io5';
+import { useState } from 'react';
+import SideBar from './SideBar';
+import { links } from '../Helpers/Menu/links';
 
 const TopBar: React.FC = () => {
+  const [displaySideBar, setDisplaySideBar] = useState('none');
+  const [animationSideBar, setAnimationSideBar] = useState('none');
+  const [icon, setIcon] = useState(<RxHamburgerMenu/>);
+
+  function openSideBar() {
+    if (displaySideBar === 'none') {
+      setDisplaySideBar('flex');
+      setAnimationSideBar('show 0.5s');
+      setTimeout(() => setIcon(< IoCloseCircleOutline/>), 200);
+      return;
+    }
+    setIcon(<RxHamburgerMenu/>);
+    setAnimationSideBar('hidden 0.5s');
+    setTimeout(() => setDisplaySideBar('none'), 500);
+  }
+
   return (
-    <Container>
-      <Logo/>
-      <Links>
-        <Link to = {'/signin'}>
-          <p>Login</p>
-        </Link>
-        <Link to = {'/report'}>
-          <p>Report</p>
-        </Link>
-        <Link to = {'/timeline'}>
-          <p>Timeline</p>
-        </Link>
-        <Link to = {'/about'}>
-          <p>Sobre</p>
-        </Link>
-        <a href = "https://www.windy.com/-22.973/-43.149/waves?swell1,-22.980,-43.147,15" target = "_blank" rel="noreferrer">
-          <p>Previsão</p>
-        </a>
-      </Links>
-    </Container>
+    <>
+      <Container>
+        <Logo/>
+        <Links>
+          {links?.map((value, index) => <Link key = {index} to = {value.url}><p>{value.name}</p></Link>)}
+          <a href = "https://www.windy.com/-22.973/-43.149/waves?swell1,-22.980,-43.147,15" target = "_blank" rel="noreferrer">
+            <p>Previsão</p>
+          </a>
+        </Links>
+        <Hamburguer onClick = {openSideBar}>
+          {icon}
+        </Hamburguer>
+      </Container>
+      <SideBar displaySideBar = {displaySideBar} setDisplaySideBar = {setDisplaySideBar} 
+        setAnimationSideBar = {setAnimationSideBar} animationSideBar = {animationSideBar} setIcon = {setIcon}/>
+    </>
   );
 };
 export default TopBar;
@@ -40,7 +57,7 @@ const Container = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 `;
 const Links = styled.div`
     display: flex;
@@ -59,5 +76,19 @@ const Links = styled.div`
 
     && p:hover {
         color: grey;
+    }
+
+    @media (max-width: 700px) {
+        display: none;
+    }
+`;
+
+const Hamburguer = styled.div`
+  display: none;
+  font-size: 20px;
+
+  @media (max-width: 700px) {
+        display: initial;
+        color: white;
     }
 `;
