@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Logo: React.FC = () => {
   return (
-    <Container>
-      <h1>
-                Ocean Report
-      </h1>
-    </Container>
+    <Link to = {'/'}>
+      <Container>
+        <h1>Ocean Report</h1>
+      </Container>
+    </Link>
   );
 };
 export default Logo;

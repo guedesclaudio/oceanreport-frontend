@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-const Panel: React.FC = () => {
+type PanelProps = {
+  children: string
+};
+
+const Panel: React.FC<PanelProps> = ({ children }) => {
   return (
     <Container>
-      <Title>
-                Condições do mar em tempo real, notificações e reports
-      </Title>
+      <Title>{children}</Title>
     </Container>
   );
 };

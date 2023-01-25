@@ -1,7 +1,8 @@
 export type BoxInformation = {
     image: string,
     title: string,
-    text: string
+    text: string,
+    url: string
 };
 
 export type CreateUser = {
@@ -24,4 +25,12 @@ export type Error = {
 export type LinkType = {
     name: string,
     url: string
+};
+
+export type ReportObject = {
+    waveCondition: string,
+    temperatureCondition: string,
+    windSpeedCondition : string,
+    date: string,
+    hour: string
 };
