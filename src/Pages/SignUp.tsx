@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../Services/Api/Users';
 import { CreateUser } from '../Types/types';
+import { signUpMessageError } from '../Errors/SignUp';
 
 const SignUp: React.FC = () => {
   const [form, setForm] = useState<CreateUser>(initialObjectCreateUser);
@@ -16,12 +17,13 @@ const SignUp: React.FC = () => {
     if (!passwordsAreSame) return alert('Digite as senhas corretamentes');
     
     try {
+      const report = window.confirm('Deseja receber reports diários para o email cadastro?');
+      if (report) form.report = true;
       await api.postUser(form);
       navigate('/signin');
     } catch (error: any) {
-      console.error(error);
-      //const status = error.response.status;
-      //setErrorMessage("Login ou senha inválidos!");
+      const status = error.response.status;
+      alert(signUpMessageError[status]);
     }
   }
   const def = signUp;

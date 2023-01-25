@@ -14,7 +14,8 @@ export const initialObjectCreateUser = {
   name: '',
   email: '',
   password: '',
-  confirmPassword: ''
+  confirmPassword: '',
+  report: false
 };
 
 export function checkPasswords(pass1:string, pass2:string) {
