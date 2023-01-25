@@ -1,23 +1,26 @@
 import styled from 'styled-components';
 import { BoxInformation } from '../Types/types';
 import { boxData } from '../Helpers/boxData';
+import { Link } from 'react-router-dom';
 
-const Box: React.FC<BoxInformation> = ({ image, title, text }) => {
+const Box: React.FC<BoxInformation> = ({ image, title, text, url }) => {
   return (
-    <Content>
-      <img src={image}/>
-      <BoxFooter>
-        <h1>{title}</h1>
-        <p>{text}</p>
-      </BoxFooter>
-    </Content>
+    <Link to = {url}>
+      <Content>
+        <img src={image}/>
+        <BoxFooter>
+          <h1>{title}</h1>
+          <p>{text}</p>
+        </BoxFooter>
+      </Content>
+    </Link>
   );
 };
 
 const PanelBoxes: React.FC = () => {
   return (
     <Container>
-      {boxData?.map((value, index) => <Box key = {index} image = {value.image} title = {value.title} text = {value.text}/>)}
+      {boxData?.map((value, index) => <Box key = {index} image = {value.image} title = {value.title} text = {value.text} url = {value.url}/>)}
     </Container>
   );
 };

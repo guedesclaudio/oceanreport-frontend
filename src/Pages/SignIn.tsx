@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { LoginUser } from '../Types/types';
 import { UserContext } from '../Contexts/UserContext';
-import api from '../Services/Api/Users';
+import userApi from '../Services/Api/Users';
 import { treatEvent, handleForm } from '../Helpers/Form/form';
 import { signInMessageError } from '../Errors/SignIn';
 
@@ -16,7 +16,7 @@ const SignIn: React.FC = () => {
 
   async function signInUser() {
     try {
-      const response = await api.loginUser(form);
+      const response = await userApi.login(form);
       const { token } = response.data;
 
       localStorage.setItem('user', JSON.stringify({ token }));
@@ -44,7 +44,7 @@ const SignIn: React.FC = () => {
         <form onSubmit={() => treatEvent(def)}>
           <Inputs>
             {loginInputs.map((value, index) => <Input key = {index} name = {value.name} type = {value.type} placeholder = {value.placeholder}
-              onChange = {event =>  handleForm({ name: event.target.name, value: event.target.value }, form, setForm)}/>)}
+              onChange = {event =>  handleForm({ name: event.target.name, value: event.target.value }, form, setForm)} required/>)}
             <Button>login</Button>
           </Inputs>
         </form>

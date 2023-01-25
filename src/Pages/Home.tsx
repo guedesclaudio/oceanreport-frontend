@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     <>
       <TopBar/>
       <>
-        <Panel/>
+        <Panel children={'Condições do mar em tempo real, notificações e reports'}/>
         <PanelBoxes/>
         <HomeMessage/>
         <Footer/>

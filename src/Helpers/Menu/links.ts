@@ -2,6 +2,10 @@ import { LinkType } from '../../Types/types';
 
 export const links: LinkType[] = [
   {
+    name: 'Home',
+    url: '/'
+  },
+  {
     name: 'Login',
     url: '/signin'
   },

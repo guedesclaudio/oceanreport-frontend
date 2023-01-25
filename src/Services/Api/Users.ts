@@ -1,19 +1,18 @@
 import axios from 'axios';
 import { CreateUser, LoginUser } from '../../Types/types';
+import { baseUrl } from '../BaseUrlApi';
 
-const baseUrl = 'http://localhost:4000';
-
-function postUser(userData: CreateUser) {
+function post(userData: CreateUser) {
   return axios.post(`${baseUrl}/users`, userData);
 }
 
-function loginUser(userDataLogin: LoginUser) {
+function login(userDataLogin: LoginUser) {
   return axios.post(`${baseUrl}/users/signin`, userDataLogin);
 }
 
-const api = {
-  postUser,
-  loginUser
+const userApi = {
+  post,
+  login
 };
 
-export default api;
+export default userApi;

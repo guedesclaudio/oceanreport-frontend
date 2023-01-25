@@ -4,7 +4,7 @@ import { Title, SubTitle, Container, Inputs, Input, Button, Text } from '../Styl
 import { treatEvent, handleForm, initialObjectCreateUser, checkPasswords } from '../Helpers/Form/form';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../Services/Api/Users';
+import userApi from '../Services/Api/Users';
 import { CreateUser } from '../Types/types';
 import { signUpMessageError } from '../Errors/SignUp';
 
@@ -19,7 +19,7 @@ const SignUp: React.FC = () => {
     try {
       const report = window.confirm('Deseja receber reports diários para o email cadastro?');
       if (report) form.report = true;
-      await api.postUser(form);
+      await userApi.post(form);
       navigate('/signin');
     } catch (error: any) {
       const status = error.response.status;
@@ -32,12 +32,12 @@ const SignUp: React.FC = () => {
     <>
       <BodyColor/>
       <Title>Ocean Report</Title>
-      <SubTitle>cadastre-se e tenha acesso a todas as funções</SubTitle>
+      <SubTitle>Cadastre-se e tenha acesso a todas as informações</SubTitle>
       <Container>
         <form onSubmit={() => treatEvent(def)}>
           <Inputs>
             {userInputs.map((value, index) => <Input key = {index} name = {value.name} type = {value.type} placeholder = {value.placeholder}
-              onChange = {event =>  handleForm({ name: event.target.name, value: event.target.value }, form, setForm)}/>)}
+              onChange = {event =>  handleForm({ name: event.target.name, value: event.target.value }, form, setForm)} required/>)}
             <Button type = 'submit'>cadastrar</Button>
           </Inputs>
         </form>

@@ -6,16 +6,20 @@ export const boxData: BoxInformation[] = [
   {
     image: 'https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701316882.jpg',
     title: 'Report', 
-    text: 'Atualizado de 1 em 1 hora - 24/7'
+    text: 'Atualizado de 1 em 1 hora - 24/7',
+    url: '/report'
   },
   {
     image: ocean,
     title: 'Timeline', 
-    text: 'Compartilhe e acompanhe reports de outros usuários'
+    text: 'Compartilhe e acompanhe reports de outros usuários',
+    url: '/timeline'
   },
   {
     image: ocean3,
     title: 'Sobre nós', 
-    text: 'Entenda como funciona'
+    text: 'Entenda como funciona',
+    url: '/about'
+
   }
 ];
