@@ -12,6 +12,11 @@ export type CreateUser = {
     report: boolean
 };
 
+export type LoginUser = {
+    email: string,
+    password: string
+};
+
 export type Error = {
     [key: string]: string
 };

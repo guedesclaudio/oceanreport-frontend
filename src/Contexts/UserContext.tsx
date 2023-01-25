@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 import { useState } from 'react';
+import { contextObject } from '../Helpers/Contexts/Context';
 
-const UserContext = createContext<any>(0);
+const UserContext = createContext<any>(contextObject);
 
 const UserStorage = ({ children }: any) => {
   const [userData, setUserData] = useState<Storage>(
