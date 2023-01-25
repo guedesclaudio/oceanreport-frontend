@@ -49,6 +49,7 @@ const Content = styled.div`
 
     && img {
         width: 100%;
+        height: 340px;
         border-radius: 6px 6px 0px 0px;
     }
     
