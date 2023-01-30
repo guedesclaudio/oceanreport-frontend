@@ -1,6 +1,13 @@
 import styled from 'styled-components';
+import { Post } from '../Types/types';
 
-const Post: React.FC = () => {
+const Post: React.FC<Post> = ({
+  username,
+  title,
+  content,
+  date,
+  hour
+}) => {
   return (
     <Container>
       <PostData>
