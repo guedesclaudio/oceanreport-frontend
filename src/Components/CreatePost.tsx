@@ -8,7 +8,6 @@ const CreatePost: React.FC = () => {
         <ContentInput placeholder = 'depoimento...'/>
         <Button>Publicar</Button>
       </form>
-        
     </Container>
   );
 };
@@ -16,11 +15,15 @@ export default CreatePost;
 
 const Container = styled.div`
   width: 500px;
-  height: 260px;
+  height: 240px;
   border: 2px solid white;
   margin: -160px auto;
   background-color: #383636;
   border-radius: 10px;
+
+  @media (max-width: 500px) {
+    width: 96%;
+  }
   
   && form {
     margin-top: 20px;
@@ -56,7 +59,7 @@ const ContentInput = styled.textarea`
   font-size: 14px;
 `;
 const Button = styled.button`
-    margin-top: 80px;
+    margin-top: 60px;
     width: 200px;
     height: 30px;
     background-color: #008CBA;

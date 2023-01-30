@@ -14,6 +14,10 @@ const Timeline: React.FC = () => {
         <CreatePost/>
         <PostsList>
           <Post/>
+          <Post/>
+          <Post/>
+          <Post/>
+          <Post/>
         </PostsList>
         <Footer/>
       </>
@@ -25,4 +29,8 @@ export default Timeline;
 const PostsList = styled.div`
     width: 500px;
     margin: 180px auto;
+
+    @media (max-width: 500px) {
+        width: 96%;
+    }
 `;

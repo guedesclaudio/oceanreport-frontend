@@ -17,13 +17,14 @@ const Post: React.FC = () => {
 export default Post;
 
 const Container = styled.div`
-    width: 500px;
+    width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border: 1px solid white;
     border-radius: 0 10px 10px 10px;
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 16px;
+    box-shadow: 1px 1px 10px 0px grey;
 `;
 const PostData = styled.h1`
     color: white;
