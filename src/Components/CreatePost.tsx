@@ -20,7 +20,7 @@ const Container = styled.div`
   border: 2px solid white;
   margin: -160px auto;
   background-color: #383636;
-  border-radius: 0px 15px 15px 15px;
+  border-radius: 10px;
   
   && form {
     margin-top: 20px;
