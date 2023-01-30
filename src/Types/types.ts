@@ -30,7 +30,15 @@ export type LinkType = {
 export type ReportObject = {
     waveCondition: string,
     temperatureCondition: string,
-    windSpeedCondition : string,
+    windSpeedCondition: string,
+    date: string,
+    hour: string
+};
+
+export type Post = {
+    username: string,
+    title: string,
+    content: string,
     date: string,
     hour: string
 };

@@ -54,6 +54,9 @@ const Content = styled.div`
         width: 100%;
         height: 340px;
         border-radius: 6px 6px 0px 0px;
+        @media (max-width: 400px) {
+          width: 98vw;
+        }
     }
     
     &&:hover {
@@ -64,7 +67,7 @@ const Content = styled.div`
         margin-top: 20px;
     }
     @media (max-width: 400px) {
-        width: 90%;
+        width: 100%;
     }
 `;
 const BoxFooter = styled.div`
