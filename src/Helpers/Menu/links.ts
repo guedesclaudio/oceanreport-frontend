@@ -6,10 +6,6 @@ export const links: LinkType[] = [
     url: '/'
   },
   {
-    name: 'Login',
-    url: '/signin'
-  },
-  {
     name: 'Report',
     url: '/report'
   },

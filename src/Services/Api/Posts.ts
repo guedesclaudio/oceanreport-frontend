@@ -6,7 +6,7 @@ function get() {
 }
 
 function post(body: any, config: any) {
-    return axios.post(`${baseUrl}/posts`, body, config);
+  return axios.post(`${baseUrl}/posts`, body, config);
 }
 
 const postsApi = {

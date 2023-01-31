@@ -1,4 +1,4 @@
-export function treatEvent( def: any) { 
+export function treatEvent(def: any) { 
   if( window.event ) window.event.preventDefault();
   def();
 }

@@ -3,18 +3,19 @@ import Panel from '../Components/Panel';
 import Footer from '../Components/Footer';
 import CreatePost from '../Components/CreatePost';
 import PostsList from '../Components/PostsList';
-import { useState } from 'react';
+import { useState } from 'react'; 
 
 const Timeline: React.FC = () => {
-  const [posts, setPosts] = useState();
+  const [callApi, setCallApi] = useState<boolean>(false);
+  const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '') : null;
 
   return (
     <>
       <TopBar/>
       <>
-        <Panel children={'Acompanhe os reports de outros usuários'}/>
-        <CreatePost/>
-        <PostsList/>
+        <Panel children={user ? 'Acompanhe e compartilhe reports' : 'Acompanhe reports de outros usuários'}/>
+        {user ? <CreatePost callApi = {callApi} setCallApi = {setCallApi}/> : console.log('tem nao')}
+        <PostsList callApi = {callApi} setCallApi = {setCallApi}/>
         <Footer/>
       </>
     </>

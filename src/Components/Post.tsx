@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Post } from '../Types/types';
+import { Post as PostType } from '../Types/types';
 
-const Post: React.FC<Post> = ({
+const Post: React.FC<PostType> = ({
   username,
   title,
   content,
@@ -11,12 +11,12 @@ const Post: React.FC<Post> = ({
   return (
     <Container>
       <PostData>
-        <Name>Claudio Guedes</Name>
+        <Name>{username}</Name>
         <Date>30/01/2023 - 18:45</Date>
       </PostData>
       <Informations>
-        <Local>Praia de Piratininga</Local>
-        <Content>Hoje a praia estava com uma ressaca muito forte!! Tomem muito cuidado quando forem a praiaaaaaa aaaaaaa aaaaaaaa asd ad ad aw awd wddawdada dwadawd dawdada dawd daw d dwadawdadw dawda</Content>
+        <Local>{title}</Local>
+        <Content>{content}</Content>
       </Informations>
     </Container>
   );
