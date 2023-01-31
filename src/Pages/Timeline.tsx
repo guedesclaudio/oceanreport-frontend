@@ -13,7 +13,7 @@ const Timeline: React.FC = () => {
     <>
       <TopBar/>
       <>
-        <Panel children={user ? 'Acompanhe e compartilhe reports' : 'Acompanhe reports de outros usuários'}/>
+        <Panel children={user ? 'Acompanhe e compartilhe reports' : 'Acompanhe reports de outros usuários, faça login para compartilhar'}/>
         {user ? <CreatePost callApi = {callApi} setCallApi = {setCallApi}/> : console.log('tem nao')}
         <PostsList callApi = {callApi} setCallApi = {setCallApi}/>
         <Footer/>

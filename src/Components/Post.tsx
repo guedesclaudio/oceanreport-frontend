@@ -12,7 +12,7 @@ const Post: React.FC<PostType> = ({
     <Container>
       <PostData>
         <Name>{username}</Name>
-        <Date>30/01/2023 - 18:45</Date>
+        <Date>{date} - {hour}</Date>
       </PostData>
       <Informations>
         <Local>{title}</Local>

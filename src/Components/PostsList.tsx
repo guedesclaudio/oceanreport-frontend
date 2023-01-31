@@ -6,7 +6,7 @@ import postsApi from '../Services/Api/Posts';
 const PostsList: React.FC<any> = ({ callApi, setCallApi }) => {
   const [posts, setPosts] = useState<any[]>();
   const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '') : null;
-
+  
   async function listPosts() {
     try {
       const response = await postsApi.get();
@@ -22,7 +22,8 @@ const PostsList: React.FC<any> = ({ callApi, setCallApi }) => {
   }, [callApi]);
   
   return (
-    <Container marginTop = {user ? '100px' : '-160px'}>
+    <Container marginTop = {user ? '180px' : '-160px'}>
+      {posts?.length === 0 ? <Message>Seja o primeiro a compartilhar um report</Message> : ''}
       {posts?.map((value, index) => <Post key = {index} title = {value.Title} content = {value.Content} 
         username = {value.User.name} date = {value.date} hour = {value.hour}/>)}
     </Container>
@@ -39,4 +40,11 @@ const Container = styled.div<any>`
     @media (max-width: 500px) {
         width: 96%;
     }
+`;
+const Message = styled.h1`
+  margin-top: 280px;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  color: grey;
+  text-align: center
 `;

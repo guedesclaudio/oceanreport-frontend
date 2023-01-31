@@ -13,12 +13,6 @@ const TopBar: React.FC = () => {
   const [icon, setIcon] = useState(<RxHamburgerMenu/>);
   const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '') : null;
   const navigate = useNavigate();
-  /*if (user) {
-    links[1] = {
-      name: 'Sair',
-      url: '/signin',
-    };
-  }  */
 
   function openSideBar() {
     if (displaySideBar === 'none') {
