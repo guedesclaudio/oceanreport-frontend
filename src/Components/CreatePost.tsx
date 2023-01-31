@@ -1,12 +1,32 @@
 import styled from 'styled-components';
+import { treatEvent, handleForm } from '../Helpers/Form/form';
+import postsApi from '../Services/Api/Posts';
+import { useState } from 'react';
 
-const CreatePost: React.FC = () => {
+const CreatePost: React.FC<any> = ({ callApi, setCallApi }) => {
+  const [form, setForm] = useState<any>();
+  const { token } = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '') : null;
+  const config = { headers: { 'Authorization': `Bearer ${token}` } };
+
+  async function post() {
+    try {
+      await postsApi.post(form, config);
+      setCallApi(true);
+      setForm({});
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const def = post;
+
   return (
     <Container>
-      <form>
-        <TitleInput placeholder = 'local...'/>
-        <ContentInput placeholder = 'depoimento...'/>
-        <Button>Publicar</Button>
+      <form onSubmit={() => treatEvent(def)}>
+        <TitleInput placeholder = 'local...' name = 'title' onChange = {event =>  handleForm({ name: event.target.name, value: event.target.value }, form, setForm)} required
+          value = {form?.title ? form.title : ''}/>
+        <ContentInput placeholder = 'depoimento...' name = 'content' onChange = {event =>  handleForm({ name: event.target.name, value: event.target.value }, form, setForm)} required
+          value = {form?.content ? form.content : ''}/>
+        <Button type = 'submit'>Publicar</Button>
       </form>
     </Container>
   );

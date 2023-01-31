@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Logo from './Logo';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import { useState } from 'react';
@@ -11,6 +11,14 @@ const TopBar: React.FC = () => {
   const [displaySideBar, setDisplaySideBar] = useState('none');
   const [animationSideBar, setAnimationSideBar] = useState('none');
   const [icon, setIcon] = useState(<RxHamburgerMenu/>);
+  const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '') : null;
+  const navigate = useNavigate();
+  /*if (user) {
+    links[1] = {
+      name: 'Sair',
+      url: '/signin',
+    };
+  }  */
 
   function openSideBar() {
     if (displaySideBar === 'none') {
@@ -24,11 +32,19 @@ const TopBar: React.FC = () => {
     setTimeout(() => setDisplaySideBar('none'), 500);
   }
 
+  function out() {
+    localStorage.removeItem('user');
+    return navigate('/signin');
+  }
+
   return (
     <>
       <Container>
         <Logo/>
         <Links>
+          <p onClick = {user ? out : () => navigate('/signin')}>
+            {user ? 'Sair': 'Login'}
+          </p>
           {links?.map((value, index) => <Link key = {index} to = {value.url}><p>{value.name}</p></Link>)}
           <a href = "https://www.windy.com/-22.973/-43.149/waves?swell1,-22.980,-43.147,15" target = "_blank" rel="noreferrer">
             <p>Previsão</p>
