@@ -26,7 +26,7 @@
 - Configuração do Docker
 - Realizar CI/CD com deploy AWS
 
-# Stack principal Backend
+# Stack principal Frontend
 - React
 - TypeScript
 - Syled-components
