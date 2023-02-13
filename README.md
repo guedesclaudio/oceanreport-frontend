@@ -24,7 +24,6 @@
 - Opção de poder avaliar a acertividade do algoritmo que gera o report
 - Opção do usuário poder gerenciar sua conta
 - Configuração do Docker
-- Realizar CI/CD com deploy AWS
 
 # Stack principal Frontend
 - React
